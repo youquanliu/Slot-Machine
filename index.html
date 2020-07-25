@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <script defer src="./main.js"></script>
+
+    <audio id="helloChildren" src="./sounds/chef_hello-there-children.mp3"></audio>
 </head>
 
 <body class="scene">
-    
+
     <!--kenny fly start-->
     <div class="kenny">
         <img src="./img/kenny-fly.png">
@@ -27,14 +29,14 @@
                 <section id="instruction-section">
                     <h3>* * * * * * * * * * WINNING COMBINATIONS * * * * * * * * * *</h3>
                     <p>
-                        <span id="a" class="f-left">2 JESUS = 50 TOKENS</span> &nbsp; ———––– &nbsp;<span id="b"
+                        <span id="w1" class="f-left">2 JESUS = 50 TOKENS</span> &nbsp; ———––– &nbsp;<span id="w2"
                             class="f-right">3 MATCHES = 50 TOKENS</span><br>
-                        <span id="c" class="f-left">1 GO COWS = 20 TOKENS</span> &nbsp; ———————————– &nbsp;<span id="d"
-                            class="f-right">3 GO COWS = 100 TOKENS</span><br>
+                        <span id="w3" class="f-left">1 GO COWS = 20 TOKENS</span> &nbsp; ———————————– &nbsp;<span
+                            id="w4" class="f-right">3 GO COWS = 100 TOKENS</span><br>
                     </p>
                     <h3>* * * * * * * * * * * LOSER COMBINATIONS * * * * * * * * * * *</h3>
                     <p>
-                        <span id="e" class="f-left">2 SATAN = -100 TOKENS</span> &nbsp; —————– &nbsp;<span id="f"
+                        <span id="l1" class="f-left">2 SATAN = -100 TOKENS</span> &nbsp; —————– &nbsp;<span id="l2"
                             class="f-right">3 CARTMAN = -666 TOKENS</span><br>
                         <!-- <span id="g" class="f-left">2+ CIRCLES = -20% TOKENS</span> &nbsp; ——– &nbsp;<span id="h"
                             class="f-right">2+ HEARTS = -40% TOKENS</span><br> -->
@@ -43,21 +45,21 @@
                 <!--------SRECTION BET -------->
                 <section id="bet-section">
                     <h3>* * * * * * * $0.05 = 1 TOKEN; 5 TOKENS/SPIN * * * * * * *</h3>
-                    <input id="cashin" placeholder="0.00">
-                    <button id="placebet" class="btn">PLACE BET</button>
+                    <input id="betInput" placeholder="0.00">
+                    <button id="betBtn" class="btn">PLACE BET</button>
                 </section>
                 <!--------SRECTION SPINNER -------->
 
-                <section id="spinner">
-                    <div class="slot"><img id="0" src=""></div>
-                    <div class="slot"><img id="1" src=""></div>
-                    <div class="slot"><img id="2" src=""></div>
+                <section id="spinner-section">
+                    <div class="roller"><img id="r1" src=""></div>
+                    <div class="roller"><img id="r2" src=""></div>
+                    <div class="roller"><img id="r3" src=""></div>
                 </section>
                 <!--------SRECTION TOKEN -------->
                 <section id="token-section">
                     <h2 id="label" class="score">TOKENS:</h2>
                     <h2 id="tokens" class="score">000019</h2>
-                    <button id="cashout" class="btn">QUIT</button>
+                    <button id="quitBtn" class="btn">QUIT</button>
                 </section>
 
 
@@ -68,6 +70,9 @@
         <!--chef-body end -->
     </div>
 
+    <audio id="helloChildren">
+        <source src="sounds/chef_hello-there-children.mp3" type="audio/mpeg">
+    </audio>
 
 </body>
 
