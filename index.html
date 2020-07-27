@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slot Machine</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <script defer src="./main.js"></script>
+    <link rel="shortcut icon" href="#">
 
     <audio id="helloChildren" src="./sounds/chef_hello-there-children.mp3"></audio>
 </head>
@@ -44,21 +46,21 @@
                 </section>
                 <!--------SRECTION BET -------->
                 <section id="bet-section">
-                    <h3>* * * * * * * $0.05 = 1 TOKEN; 5 TOKENS/SPIN * * * * * * *</h3>
-                    <input id="betInput" placeholder="0.00">
+                    <h3>* * * * * * * $1 = 20 TOKEN; 10 TOKENS/SPIN * * * * * * *</h3>
+                    <input id="betInput" placeholder="$0.00">
                     <button id="betBtn" class="btn">PLACE BET</button>
                 </section>
                 <!--------SRECTION SPINNER -------->
 
                 <section id="spinner-section">
-                    <div class="roller"><img id="r1" src=""></div>
-                    <div class="roller"><img id="r2" src=""></div>
-                    <div class="roller"><img id="r3" src=""></div>
+                    <div class="roller"><img src=""></div>
+                    <div class="roller"><img src=""></div>
+                    <div class="roller"><img src=""></div>
                 </section>
                 <!--------SRECTION TOKEN -------->
                 <section id="token-section">
                     <h2 id="label" class="score">TOKENS:</h2>
-                    <h2 id="tokens" class="score">000019</h2>
+                    <h2 id="tokens" class="score"></h2>
                     <button id="quitBtn" class="btn">QUIT</button>
                 </section>
 
