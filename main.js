@@ -49,17 +49,6 @@ let spinResults = [];
 
 //***********------------ REFERENCES ------------************* */
 
-let chef_audio = document.querySelector('#chef_audio');
-let place_bet_audio = document.querySelector('#place_bet');
-let cartman_audio = document.querySelector('#cartman_pay');
-let stan_audio = document.querySelector('#stan_sweet');
-let kyle_audio = document.querySelector('#kyle_fart');
-let satan_audio = document.querySelector('#satan');
-let win_audio = document.querySelector('#kenny');
-let timmy_audio = document.querySelector('#timmy');
-
-
-
 let betInput = document.querySelector('#betInput');
 let betBtn = document.querySelector('#betBtn');
 let roller = document.querySelector('#spinner-section');
@@ -68,6 +57,15 @@ let helloChildren_audio = document.getElementById('helloChildren');
 let tokens = document.querySelector('#tokens');
 const imageTags = document.querySelectorAll(".roller > img");  //object nodelist of image
 
+let chef_audio = document.querySelector('#chef_audio');
+let place_bet_audio = document.querySelector('#place_bet');
+let cartman_audio = document.querySelector('#cartman_pay');
+let stan_audio = document.querySelector('#stan_sweet');
+let kyle_audio = document.querySelector('#kyle_fart');
+let satan_audio = document.querySelector('#satan');
+let win_audio = document.querySelector('#kenny');
+let timmy_audio = document.querySelector('#timmy');
+let slot_audio = document.querySelector('#roll_slot');
 //***********------------ EVENT LISTENER ------------************* */
 
 betBtn.addEventListener('click', placeBet);
@@ -110,7 +108,6 @@ function placeBet() {
 }
 
 function spin() {
-    //spin sound play;
     if (tokens.innerHTML > 0) {
         hightLightRemover();
         tokensAmount -= 10;
