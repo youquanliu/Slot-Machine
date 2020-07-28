@@ -49,16 +49,24 @@ let spinResults = [];
 
 //***********------------ REFERENCES ------------************* */
 
+let chef_audio = document.querySelector('#chef_audio');
+let place_bet_audio = document.querySelector('#place_bet');
+let cartman_audio = document.querySelector('#cartman_pay');
+let stan_audio = document.querySelector('#stan_sweet');
+let kyle_audio = document.querySelector('#kyle_fart');
+let satan_audio = document.querySelector('#satan');
+let win_audio = document.querySelector('#kenny');
+let timmy_audio = document.querySelector('#timmy');
+
+
+
 let betInput = document.querySelector('#betInput');
 let betBtn = document.querySelector('#betBtn');
 let roller = document.querySelector('#spinner-section');
 let quitBtn = document.querySelector('#quitBtn');
 let helloChildren_audio = document.getElementById('helloChildren');
-// let win_audio = document.querySelector('#');
-let body = document.querySelector('.chef-body');
 let tokens = document.querySelector('#tokens');
 const imageTags = document.querySelectorAll(".roller > img");  //object nodelist of image
-
 
 //***********------------ EVENT LISTENER ------------************* */
 
@@ -66,7 +74,7 @@ betBtn.addEventListener('click', placeBet);
 quitBtn.addEventListener('click', initialize);
 roller.addEventListener('click', spin);
 //Hello there children
-body.addEventListener('click', function () {
+chef_audio.addEventListener('click', function () {
     helloChildren_audio.play();
 });
 
@@ -89,6 +97,7 @@ function initialize() {
 
 function placeBet() {
     if (!isNaN(betInput.value) && betInput.value.length > 0) {
+        place_bet_audio.play()
         tokensAmount += Math.floor(betInput.value) / 0.05;
         tokens.innerHTML = sixDigit(tokensAmount);
         betInput.placeholder = '$0.00';
@@ -130,24 +139,28 @@ function rule(arr) {
     for (let key in count) {
         if (count[key] == 2) {
             if (key == "img/stan.png") {
+                stan_audio.play();
                 tokensAmount += 50;
                 tokens.innerHTML = sixDigit(tokensAmount);
                 w1.style.background = 'yellow';
                 w1.style.color = 'blue';
             }
             else if (key == "img/kyle.png") {
+                kyle_audio.play();
                 tokensAmount += 100;
                 tokens.innerHTML = sixDigit(tokensAmount);
                 w3.style.background = 'yellow';
                 w3.style.color = 'blue';
             }
             else if (key == "img/satan.png") {
+                satan_audio.play()
                 tokensAmount *= 0.4;
                 tokens.innerHTML = sixDigit(tokensAmount);
                 l1.style.background = 'yellow';
                 l1.style.color = 'blue';
             }
             else if (key == "img/timmy.png") {
+                timmy_audio.play()
                 tokensAmount = Math.floor(tokensAmount * 1.2);
                 tokens.innerHTML = sixDigit(tokensAmount);
                 w4.style.background = 'yellow';
@@ -155,14 +168,14 @@ function rule(arr) {
             }
         }
         else if (count[key] == 3 && key == "img/cartman.png") {
-            //audio
+            cartman_audio.play();
             tokensAmount -= 300;
             tokens.innerHTML = sixDigit(tokensAmount);
             l2.style.background = 'yellow';
             l2.style.color = 'blue';
         }
         else if (count[key] == 3) {
-            //audio
+            win_audio.play();
             tokensAmount += 500;
             tokens.innerHTML = sixDigit(tokensAmount);
             w2.style.background = 'yellow';
