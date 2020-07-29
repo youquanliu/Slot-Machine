@@ -41,6 +41,7 @@ section {
     width   : 40%;
     height  : 100vh;
     margin  : 0 auto;
+    z-index : -99;
 }
 
 .machine-body {
@@ -52,15 +53,16 @@ section {
     top             : 50%;
     text-align      : center;
     margin-bottom   : 0;
+    overflow-y      : hidden;
+
 }
 
 .wrapper {
     display       : inline-block;
     width         : 100%;
-    height        : 95%;
+    height        : 100%;
     display       : flex;
     flex-direction: column;
-    margin-top    : 2%;
 }
 
 /* * * * * * * * * * BUTTON and INPUT* * * * * * * * * */
@@ -94,7 +96,7 @@ input:active {
     height      : 30px;
     width       : 38%;
     outline     : none;
-    font-size   : 20px;
+    font-size   : 100%;
     padding-left: 10px;
 }
 
@@ -112,7 +114,7 @@ input:focus {
 }
 
 #first-p {
-    margin-bottom: 30px;
+    margin-bottom: 1.5%;
 }
 
 .f-right {
@@ -126,8 +128,9 @@ input:focus {
 }
 
 h3 {
+    font-size    : 120%;
     margin-top   : 0px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
 }
 
 p {
@@ -158,9 +161,9 @@ p {
 
 #spinner-section {
     padding         : 0px 15px;
-    margin          : 0 auto 20px auto;
+    margin          : 0 auto 0 auto;
     width           : 85%;
-    height          : 70%;
+    height          : 50%;
     display         : flex;
     flex-direction  : row;
     justify-content : space-evenly;
@@ -172,7 +175,7 @@ p {
 
 .roller {
     width           : 30%;
-    height          : 80%;
+    height          : 86%;
     border          : 5px double #ee3253;
     background-color: #def2f1;
     border-radius   : 20px;
@@ -311,7 +314,7 @@ p {
     position : absolute;
     top      : 0;
     max-width: 100%;
-    animation: animateItem calc(8s * var(--i)) linear infinite;
+    animation: animateItem calc(6s * var(--i)) linear infinite;
     z-index  : -99;
 
 }

@@ -13,7 +13,7 @@ function stars() {
     while (i < count) {
         let star = document.createElement('i');
         let x = Math.floor(Math.random() * window.innerWidth);
-        let duration = Math.random() * 1;
+        let duration = Math.random() * 2;
         let h = Math.random() * 100;
 
         star.style.left = x + 'px';

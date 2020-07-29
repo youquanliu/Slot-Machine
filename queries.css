@@ -1,5 +1,20 @@
 /* Big tablets to 1200px(widths smaller than the 1140px row)*/
 @media only screen and (max-width: 1200px) {
+
+    .chef-body {
+        width: 100%;
+    }
+
+    .machine-body {
+        width: 99%;
+    }
+
+    #spinner-section {
+        width: 92%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
     body {
         background-color: #fff;
         color           : black;
@@ -10,17 +25,6 @@
     }
 }
 
-@media only screen and (min-width: 1023px) {
-    body {
-        background-color: #fff;
-        color           : black;
-    }
-
-    .chef-body {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 768px) {}
 
 @media only screen and (max-width: 480px) {}
