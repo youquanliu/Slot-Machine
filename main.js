@@ -1,11 +1,11 @@
 
 //***********------------ FLYING KENNY AND STARS ------------************* */
 
-// document.addEventListener("mousemove", function (e) {
-//     let kenny = document.querySelector(".kenny");
-//     kenny.style.left = e.offsetX + 'px';
-//     kenny.style.top = e.offsetY + 'px';
-// })
+document.addEventListener("mousemove", function (e) {
+    let kenny = document.querySelector(".kenny");
+    kenny.style.left = e.offsetX + 'px';
+    kenny.style.top = e.offsetY + 'px';
+})
 function stars() {
     let count = 30;
     let scene = document.querySelector('.scene');
@@ -13,7 +13,7 @@ function stars() {
     while (i < count) {
         let star = document.createElement('i');
         let x = Math.floor(Math.random() * window.innerWidth);
-        let duration = Math.random() * 5;
+        let duration = Math.random() * 1;
         let h = Math.random() * 100;
 
         star.style.left = x + 'px';
