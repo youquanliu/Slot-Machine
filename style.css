@@ -227,6 +227,7 @@ p {
     pointer-events: none;
     animation     : animate 0.2s ease infinite;
     transition    : 0.1s;
+    z-index       : 99;
 }
 
 @keyframes animate {
@@ -273,6 +274,8 @@ p {
     filter    : blur(2px);
 }
 
+/* * * * * * * * * * DROPING ITEMS * * * * * * * * * */
+
 .drop-items {
     position: absolute;
     top     : 0;
@@ -304,16 +307,13 @@ p {
     left : 93%;
 }
 
-#mackey {
-    width: 6vw;
-    left : 70%;
-}
-
 .drop-items img {
     position : absolute;
     top      : 0;
     max-width: 100%;
     animation: animateItem calc(8s * var(--i)) linear infinite;
+    z-index  : -99;
+
 }
 
 @keyframes animateItem {
