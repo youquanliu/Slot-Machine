@@ -58,11 +58,13 @@ section {
 }
 
 .wrapper {
-    display       : inline-block;
-    width         : 100%;
-    height        : 100%;
-    display       : flex;
-    flex-direction: column;
+    display        : inline-block;
+    width          : 100%;
+    height         : 100%;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
 }
 
 /* * * * * * * * * * BUTTON and INPUT* * * * * * * * * */
@@ -143,6 +145,13 @@ p {
 
 /* * * * * * * * * * BET SECTION * * * * * * * * * */
 
+.horizon {
+    display        : flex;
+    flex-direction : row;
+    align-items    : center;
+    justify-content: space-between;
+}
+
 #bet-section h3 {
     margin-bottom: 20px;
 }
@@ -155,6 +164,14 @@ p {
 #bet-section #betInput {
     padding  : 0 20px;
     font-size: 140%;
+}
+
+#betInput {
+    width: 65%;
+}
+
+#betBtn {
+    width: 30%;
 }
 
 /* * * * * * * * * * SPINNER SECTION * * * * * * * * * */

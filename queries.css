@@ -1,30 +1,93 @@
 /* Big tablets to 1200px(widths smaller than the 1140px row)*/
 @media only screen and (max-width: 1200px) {
 
+    html,
+    body {
+        font-size: 100%;
+    }
+
     .chef-body {
         width: 100%;
     }
 
     .machine-body {
-        width: 99%;
+        width: 100%;
     }
 
     #spinner-section {
-        width: 92%;
+        width  : 65%;
+        height : 40%;
+        padding: 0;
+    }
+
+    .roller {
+        height: 100%;
+        width : 33%;
+    }
+
+    .wrapper {
+        height: 100%;
+    }
+
+    #bet-section #betInput,
+    #bet-section #betBtn {
+        height: 40px;
     }
 }
 
-@media only screen and (max-width: 1024px) {
-    body {
-        background-color: #fff;
-        color           : black;
-    }
-
-    .chef-body {
-        width: 100%;
-    }
-}
+@media only screen and (max-width: 1024px) {}
 
 @media only screen and (max-width: 768px) {}
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+
+    html,
+    body {
+        font-size: 85%;
+    }
+
+    h3 {
+        font-weight: 200;
+    }
+
+    #bet-section #betInput,
+    #bet-section #betBtn {
+        height: 30px;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    #spinner-section {
+        width : 100%;
+        height: 30%;
+        margin-bottom: 2vh;
+    }
+
+    #token-section {
+        margin : 0 auto;
+        width  : 80%;
+        display: flex;
+    }
+
+    #baby {
+        width: 7vw;
+        left : 83%;
+    }
+    
+    #bowling {
+        left : 3%;
+        width: 4vw;
+    }
+    
+    #planet {
+        left : 13%;
+        width: 5vw;
+    }
+    
+    #donut {
+        width: 10vw;
+        left : 93%;
+    }
+}
