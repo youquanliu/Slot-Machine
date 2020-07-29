@@ -13,7 +13,7 @@ body {
     color           : #fefefe;
     font-family     : 'Quicksand', 'Arial', sans-serif;
     font-weight     : 500;
-    font-size       : 16px;
+    font-size       : 20px;
     text-rendering  : optimizeLegibility;
     overflow-x      : hidden;
     max-height      : 200vh;
@@ -57,9 +57,10 @@ section {
 .wrapper {
     display       : inline-block;
     width         : 100%;
-    height        : auto;
+    height        : 95%;
     display       : flex;
     flex-direction: column;
+    margin-top    : 2%;
 }
 
 /* * * * * * * * * * BUTTON and INPUT* * * * * * * * * */
@@ -110,6 +111,10 @@ input:focus {
     padding       : 2% 5%;
 }
 
+#first-p {
+    margin-bottom: 30px;
+}
+
 .f-right {
     float  : right;
     padding: 0px;
@@ -135,17 +140,27 @@ p {
 
 /* * * * * * * * * * BET SECTION * * * * * * * * * */
 
-#bet-section {
-    padding-bottom: 0;
+#bet-section h3 {
+    margin-bottom: 20px;
+}
+
+#bet-section #betInput,
+#bet-section #betBtn {
+    height: 50px;
+}
+
+#bet-section #betInput {
+    padding  : 0 20px;
+    font-size: 140%;
 }
 
 /* * * * * * * * * * SPINNER SECTION * * * * * * * * * */
 
 #spinner-section {
-    padding         : 0px 15px 0px 15px;
-    margin          : 0 auto 10px auto;
-    width           : 80%;
-    height          : 300px;
+    padding         : 0px 15px;
+    margin          : 0 auto 20px auto;
+    width           : 85%;
+    height          : 70%;
     display         : flex;
     flex-direction  : row;
     justify-content : space-evenly;
@@ -157,10 +172,15 @@ p {
 
 .roller {
     width           : 30%;
-    height          : 250px;
+    height          : 80%;
     border          : 5px double #ee3253;
     background-color: #def2f1;
     border-radius   : 20px;
+}
+
+.roller img {
+    width : auto;
+    height: 100%;
 }
 
 /* * * * * * * * * * TOKEN SCORE BAR * * * * * * * * * */

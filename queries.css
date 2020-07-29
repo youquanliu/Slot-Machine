@@ -1,0 +1,27 @@
+/* Big tablets to 1200px(widths smaller than the 1140px row)*/
+
+@media screen and (max-width: 1200px) {
+    body {
+        background-color: #fff;
+        color           : black;
+    }
+
+    .chef-body {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1023px) {
+    body {
+        background-color: #fff;
+        color           : black;
+    }
+
+    .chef-body {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px) {}
+
+@media only screen and (max-width: 480px) {}

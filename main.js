@@ -1,11 +1,11 @@
 
 //***********------------ FLYING KENNY AND STARS ------------************* */
 
-document.addEventListener("mousemove", function (e) {
-    let kenny = document.querySelector(".kenny");
-    kenny.style.left = e.offsetX + 'px';
-    kenny.style.top = e.offsetY + 'px';
-})
+// document.addEventListener("mousemove", function (e) {
+//     let kenny = document.querySelector(".kenny");
+//     kenny.style.left = e.offsetX + 'px';
+//     kenny.style.top = e.offsetY + 'px';
+// })
 function stars() {
     let count = 30;
     let scene = document.querySelector('.scene');
@@ -92,7 +92,6 @@ function initialize() {
     }
     inputInitializer()
 }
-
 function placeBet() {
     if (!isNaN(betInput.value) && betInput.value.length > 0) {
         place_bet_audio.play()
