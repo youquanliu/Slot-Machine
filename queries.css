@@ -1,6 +1,5 @@
 /* Big tablets to 1200px(widths smaller than the 1140px row)*/
-
-@media screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     body {
         background-color: #fff;
         color           : black;
