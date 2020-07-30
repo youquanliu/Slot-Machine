@@ -19,12 +19,9 @@ function stars() {
 
         star.style.left = x + 'px';
         star.style.width = 2 + 'px';
-<<<<<<< HEAD
-        //length of star
         star.style.height = 60 + h + 'px';
-=======
+
         star.style.height = 30 + h + 'px';
->>>>>>> origin/master
         star.style.animationDuration = duration + 's';
         star.style.zIndex = -99;
 
@@ -190,14 +187,14 @@ function rule(arr) {
         if (count[key] == 2) {
             if (key == "img/stan.png") {
                 stan_audio.play();
-                tokensAmount += 50;
+                tokensAmount += 100;
                 tokens.innerHTML = sixDigit(tokensAmount);
                 w1.style.background = 'yellow';
                 w1.style.color = 'blue';
             }
             else if (key == "img/kyle.png") {
                 kyle_audio.play();
-                tokensAmount += 100;
+                tokensAmount += 200;
                 tokens.innerHTML = sixDigit(tokensAmount);
                 w3.style.background = 'yellow';
                 w3.style.color = 'blue';
