@@ -13,15 +13,15 @@ function stars() {
     while (i < count) {
         let star = document.createElement('i');
         let x = Math.floor(Math.random() * window.innerWidth);
-        let duration = Math.random() * 2;
+        let duration = Math.random() * 3;
         let h = Math.random() * 100;
 
         star.style.left = x + 'px';
         star.style.width = 2 + 'px';
         //length of star
-        star.style.height = 40 + h + 'px';
+        star.style.height = 60 + h + 'px';
         star.style.animationDuration = duration + 's';
-        star.style.zIndex = -1;
+        star.style.zIndex = -99;
 
         scene.appendChild(star);
         i++;
@@ -71,8 +71,7 @@ let slot_audio = document.querySelector('#roll_slot');
 betBtn.addEventListener('click', placeBet);
 quitBtn.addEventListener('click', initialize);
 roller.addEventListener('click', spin);
-//Hello there children
-chef_audio.addEventListener('click', function () {
+chef_audio.addEventListener('mouseover', function () {
     helloChildren_audio.play();
 });
 

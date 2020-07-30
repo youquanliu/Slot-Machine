@@ -38,10 +38,10 @@ section {
     content : '';
     position: absolute;
     top     : 0;
-    width   : 40%;
+    width   : 5%;
     height  : 100vh;
     margin  : 0 auto;
-    z-index : -99;
+    z-index : -90;
 }
 
 .machine-body {
@@ -332,7 +332,7 @@ p {
     top      : 0;
     max-width: 100%;
     animation: animateItem calc(6s * var(--i)) linear infinite;
-    z-index  : -99;
+    z-index  : -1;
 
 }
 
