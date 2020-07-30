@@ -1,4 +1,3 @@
-
 //***********------------ FLYING KENNY AND STARS ------------************* */
 
 document.addEventListener("mousemove", function (e) {
@@ -6,6 +5,7 @@ document.addEventListener("mousemove", function (e) {
     kenny.style.left = e.offsetX + 'px';
     kenny.style.top = e.offsetY + 'px';
 })
+
 function stars() {
     let count = 50;
     let scene = document.querySelector('.scene');
@@ -33,10 +33,10 @@ stars();
 
 //***********------------ CONSTANTS ------------************* */
 const imagesObjArray = [
-    // { name: 'cartman', image: 'img/cartman.png' },
-    // { name: 'jimmy', image: 'img/jimmy.png' },
-    // { name: 'kyle', image: 'img/kyle.png' },
-    //{ name: 'satan', image: 'img/satan.png' },
+    { name: 'cartman', image: 'img/cartman.png' },
+    { name: 'jimmy', image: 'img/jimmy.png' },
+    { name: 'kyle', image: 'img/kyle.png' },
+    { name: 'satan', image: 'img/satan.png' },
     { name: 'stan', image: 'img/stan.png' },
     { name: 'timmy', image: 'img/timmy.png' },
 ];
@@ -80,7 +80,7 @@ let slot_audio = document.querySelector('#roll_slot');
 betBtn.addEventListener('click', placeBet);
 quitBtn.addEventListener('click', initialize);
 roller.addEventListener('click', spin);
-chef_audio.addEventListener('click', function () {
+chef_audio.addEventListener('mouseover', function () {
     helloChildren_audio.play();
 });
 

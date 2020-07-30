@@ -38,10 +38,9 @@ section {
     content : '';
     position: absolute;
     top     : 0;
-    width   : 10%;
+    width   : 2%;
     height  : 100vh;
     margin  : 0 auto;
-    z-index : 99;
 }
 
 .machine-body {
