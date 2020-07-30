@@ -38,10 +38,10 @@ section {
     content : '';
     position: absolute;
     top     : 0;
-    width   : 40%;
+    width   : 10%;
     height  : 100vh;
     margin  : 0 auto;
-    z-index : -99;
+    z-index : 99;
 }
 
 .machine-body {
@@ -162,7 +162,7 @@ p {
 }
 
 #bet-section #betInput {
-    padding  : 0 20px;
+    padding  : 0 10px;
     font-size: 140%;
 }
 
@@ -172,6 +172,10 @@ p {
 
 #betBtn {
     width: 30%;
+}
+
+.red {
+    color: #ec2644;
 }
 
 /* * * * * * * * * * SPINNER SECTION * * * * * * * * * */

@@ -7,10 +7,11 @@ document.addEventListener("mousemove", function (e) {
     kenny.style.top = e.offsetY + 'px';
 })
 function stars() {
-    let count = 30;
+    let count = 50;
     let scene = document.querySelector('.scene');
     let i = 0;
     while (i < count) {
+
         let star = document.createElement('i');
         let x = Math.floor(Math.random() * window.innerWidth);
         let duration = Math.random() * 2;
@@ -18,12 +19,12 @@ function stars() {
 
         star.style.left = x + 'px';
         star.style.width = 2 + 'px';
-        //length of star
-        star.style.height = 40 + h + 'px';
+        star.style.height = 30 + h + 'px';
         star.style.animationDuration = duration + 's';
         star.style.zIndex = -1;
 
         scene.appendChild(star);
+
         i++;
     }
 }
@@ -32,10 +33,10 @@ stars();
 
 //***********------------ CONSTANTS ------------************* */
 const imagesObjArray = [
-    { name: 'cartman', image: 'img/cartman.png' },
-    { name: 'jimmy', image: 'img/jimmy.png' },
-    { name: 'kyle', image: 'img/kyle.png' },
-    { name: 'satan', image: 'img/satan.png' },
+    // { name: 'cartman', image: 'img/cartman.png' },
+    // { name: 'jimmy', image: 'img/jimmy.png' },
+    // { name: 'kyle', image: 'img/kyle.png' },
+    //{ name: 'satan', image: 'img/satan.png' },
     { name: 'stan', image: 'img/stan.png' },
     { name: 'timmy', image: 'img/timmy.png' },
 ];
@@ -44,8 +45,15 @@ const hightlightArr = [w1, w2, w3, w4, l1, l2];
 
 //***********------------ VARIABLES ------------************* */
 
+//Amount of tokens
 let tokensAmount;
+//a objects of spinner results
 let spinResults = [];
+//tracking wether user put bet already
+let c = 0;
+//get data back when user try to input invalid amount
+let m = '000000';
+let n = 0;
 
 //***********------------ REFERENCES ------------************* */
 
@@ -55,7 +63,7 @@ let roller = document.querySelector('#spinner-section');
 let quitBtn = document.querySelector('#quitBtn');
 let helloChildren_audio = document.getElementById('helloChildren');
 let tokens = document.querySelector('#tokens');
-const imageTags = document.querySelectorAll(".roller > img");  //object nodelist of image
+const imageTags = document.querySelectorAll(".roller > img");
 
 let chef_audio = document.querySelector('#chef_audio');
 let place_bet_audio = document.querySelector('#place_bet');
@@ -66,12 +74,12 @@ let satan_audio = document.querySelector('#satan');
 let win_audio = document.querySelector('#kenny');
 let timmy_audio = document.querySelector('#timmy');
 let slot_audio = document.querySelector('#roll_slot');
+
 //***********------------ EVENT LISTENER ------------************* */
 
 betBtn.addEventListener('click', placeBet);
 quitBtn.addEventListener('click', initialize);
 roller.addEventListener('click', spin);
-//Hello there children
 chef_audio.addEventListener('click', function () {
     helloChildren_audio.play();
 });
@@ -84,26 +92,60 @@ initialize();
 function initialize() {
     tokensAmount = 0;
     tokens.innerText = '000000';
-    betInput.placeholder = '$0.00';
+    m = 0;
+    n = '000000';
+    c = 0;
+    betInput.placeholder = 'Maxinum bet is $10';
     hightLightRemover();
     for (let index = 0; index < imageTags.length; index++) {
         imageTags[index].src = imagesObjArray[Math.floor(Math.random() * imagesObjArray.length)].image;
         imageTags[index].style.width = '81%';
     }
-    inputInitializer()
+    inputInitializer();
 }
+
 function placeBet() {
-    if (!isNaN(betInput.value) && betInput.value.length > 0) {
-        place_bet_audio.play()
-        tokensAmount += Math.floor(betInput.value) / 0.05;
-        tokens.innerHTML = sixDigit(tokensAmount);
-        betInput.placeholder = '$0.00';
-        inputInitializer();
+
+    if (!isNaN(betInput.value) && betInput.value.length > 0 && betInput.value <= 10) {
+
+        if (c < 1) {
+            place_bet_audio.play()
+            tokensAmount += Math.floor(betInput.value) / 0.05;
+            tokens.innerHTML = sixDigit(tokensAmount);
+            betInput.placeholder = '$0.00';
+            n = tokensAmount;
+            m = tokens.innerHTML;
+            inputInitializer();
+            c++;
+        }
+        else {
+            n = tokensAmount;
+            m = tokens.innerHTML;
+            inputInitializer();
+            betInput.placeholder = 'Kenny can place once only';
+        }
     }
+    else if (betInput.value > 10) {
+
+        if (c > 1) {
+            tokensAmount = n;
+            tokens.innerHTML = m;
+            inputInitializer();
+            betInput.placeholder = 'Kenny can place once only';
+        }
+        else {
+            inputInitializer();
+            betInput.placeholder = "Kenny can't carry that much!";
+            c = 0;
+        }
+    }
+
     else {
         betInput.placeholder = "Don't be mean";
         inputInitializer();
     }
+
+
 }
 
 function spin() {
@@ -115,7 +157,14 @@ function spin() {
             spinResults[index] = imagesObjArray[Math.floor(Math.random() * imagesObjArray.length)].image;
         }
         setImageToRoller(spinResults);
+
+        if (tokensAmount >= 1000) {
+            initialize();
+            betInput.placeholder = 'YOU WIN!';
+            tokens.innerHTML = "CONGRATULATION!";
+        }
     }
+
     else betInput.placeholder = "You are out of money";
 }
 
@@ -150,7 +199,7 @@ function rule(arr) {
             }
             else if (key == "img/satan.png") {
                 satan_audio.play()
-                tokensAmount *= 0.4;
+                tokensAmount = Math.floor(tokensAmount * 0.4);
                 tokens.innerHTML = sixDigit(tokensAmount);
                 l1.style.background = 'yellow';
                 l1.style.color = 'blue';
@@ -193,9 +242,7 @@ function sixDigit(number) {
 }
 
 function hightLightRemover() {
-
     for (i = 0; i < hightlightArr.length; i++) {
         hightlightArr[i].style = null;
     }
-    console.log("hightLightRemover worked");
 }
