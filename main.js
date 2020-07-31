@@ -47,13 +47,9 @@ const hightlightArr = [w1, w2, w3, w4, l1, l2];
 
 //***********------------ VARIABLES ------------************* */
 
-//Amount of tokens
 let tokensAmount;
-//a objects of spinner results
 let spinResults = [];
-//tracking wether user put bet already
 let count_for_input = 0;
-//get data back when user try to input invalid amount
 let backup_tokens_innerHTML = '000000';
 let backup_tokensAmount = 0;
 
@@ -150,6 +146,7 @@ function placeBet() {
 }
 
 function spin() {
+
     if (tokensAmount > 9) {
         hightLightRemover();
         tokensAmount -= 10;
@@ -166,7 +163,6 @@ function spin() {
             roller.removeEventListener('click', spin);
         }
     }
-
     else {
         betInput.placeholder = "No tokens left, you lose!";
         tokens.innerHTML = "LOSE";

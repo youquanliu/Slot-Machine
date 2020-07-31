@@ -35,13 +35,13 @@ section {
 }
 
 #chef_audio {
-    content             : '';
-    position            : absolute;
-    top                 : 0;
-    width               : 4%;
-    height              : 100vh;
-    margin              : 0 auto;
-    z-index: -90;
+    content : '';
+    position: absolute;
+    top     : 0;
+    width   : 4%;
+    height  : 100vh;
+    margin  : 0 auto;
+    z-index : -90;
 }
 
 .machine-body {
@@ -54,7 +54,6 @@ section {
     text-align      : center;
     margin-bottom   : 0;
     overflow-y      : hidden;
-
 }
 
 .wrapper {
@@ -330,8 +329,6 @@ p {
     width: 10vw;
     left : 93%;
 }
-
-
 
 .drop-items img {
     position : absolute;
