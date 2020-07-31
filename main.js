@@ -144,8 +144,6 @@ function placeBet() {
         betInput.placeholder = "Don't be mean";
         inputInitializer();
     }
-
-
 }
 
 function spin() {
@@ -237,8 +235,7 @@ function inputInitializer() {
 }
 
 function sixDigit(number) {
-    if (number <= 9999) { number = ("00000" + number).slice(-6); }
-    return number;
+    return ("00000" + number).slice(-6);
 }
 
 function hightLightRemover() {
