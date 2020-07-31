@@ -41,7 +41,6 @@ section {
     width   : 4%;
     height  : 100vh;
     margin  : 0 auto;
-    z-index : -90;
 }
 
 .machine-body {
