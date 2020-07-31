@@ -52,6 +52,9 @@ let spinResults = [];
 let count_for_input = 0;
 let backup_tokens_innerHTML = '000000';
 let backup_tokensAmount = 0;
+let c = 0;
+let m = '000000';
+let n = 0;
 
 //***********------------ REFERENCES ------------************* */
 
@@ -138,7 +141,6 @@ function placeBet() {
             count_for_input = 0;
         }
     }
-
     else {
         betInput.placeholder = "Don't be mean";
         inputInitializer();
@@ -187,6 +189,7 @@ function rule(arr) {
             if (key == "img/stan.png") {
                 stan_audio.play();
                 tokensAmount += 100;
+                tokensAmount += 120;
                 tokens.innerHTML = sixDigit(tokensAmount);
                 w1.style.background = 'yellow';
                 w1.style.color = 'blue';
