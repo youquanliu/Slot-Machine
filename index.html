@@ -16,7 +16,7 @@
     <audio id="helloChildren" src="./sounds/chef_hello-there-children.mp3"></audio>
     <audio id="place_bet" src="./sounds/place_bet.mp3"></audio>
     <audio id="cartman_pay" src="./sounds/cartman.mp3"></audio>
-    <audio id="stan_sweet" src="./sounds/sweet.mp3"></audio>
+    <audio id="stan_stupid" src="./sounds/stan-game-is-stupid.mp3"></audio>
     <audio id="kyle_fart" src="./sounds/kyle-fart-in-my-mouth.mp3"></audio>
     <audio id="satan" src="./sounds/satan_be_strong.mp3"></audio>
     <audio id="kenny" src="./sounds/woo-hoooooo.mp3"></audio>
@@ -31,10 +31,10 @@
         <img src="./img/kenny-fly.png">
     </div>
     <div class="drop-items">
-        <img id="baby" src="./img/drop-baby.png" alt="droping baby" style="--i:1;">
-        <img id="bowling" src="./img/drop-bowling.png" alt="drop bowling" style="--i:2;">
-        <img id="planet" src="./img/drop-planet.png" alt="droping planet" style="--i:3;">
-        <img id="donut" src="./img/drop-donut.png" alt="droping dnut" style="--i:4;">
+        <img class="spinner" id="baby" src="./img/drop-baby.png" alt="droping baby" style="--i:1;">
+        <img class="spinner" id="bowling" src="./img/drop-bowling.png" alt="drop bowling" style="--i:2;">
+        <img class="spinner" id="planet" src="./img/drop-planet.png" alt="droping planet" style="--i:3;">
+        <img class="spinner" id="donut" src="./img/drop-donut.png" alt="droping dnut" style="--i:4;">
     </div>
     <!--kenny fly end-->
     <div id="chef_audio"></div>
@@ -60,7 +60,8 @@
                 </section>
                 <!--------SRECTION BET -------->
                 <section id="bet-section">
-                    <h3> $1 = <span class="red">20</span> TOKEN; <span class="red">10</span> TOKENS/SPIN; <span class="red">1000</span> TOKENS TO WIN!</h3>
+                    <h3> $1 = <span class="red">20</span> TOKEN; <span class="red">10</span> TOKENS/SPIN; <span
+                            class="red">1000</span> TOKENS TO WIN!</h3>
                     <div class="horizon">
                         <input id="betInput" placeholder="$0.00">
                         <button id="betBtn" class="btn">PLACE BET</button></div>
@@ -76,9 +77,8 @@
                 <section id="token-section">
                     <h2 id="label" class="score">TOKENS:</h2>
                     <h2 id="tokens" class="score"></h2>
-                    <button id="quitBtn" class="btn">QUIT</button>
+                    <button id="quitBtn" class="btn">REPLAY</button>
                 </section>
-
 
                 <!--wrapper end-->
             </div>

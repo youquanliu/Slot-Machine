@@ -19,7 +19,7 @@ function stars() {
 
         star.style.left = x + 'px';
         star.style.width = 2 + 'px';
-        star.style.height = 60 + h + 'px';
+        star.style.height = 40 + h + 'px';
 
         star.style.height = 30 + h + 'px';
         star.style.animationDuration = duration + 's';
@@ -52,10 +52,10 @@ let tokensAmount;
 //a objects of spinner results
 let spinResults = [];
 //tracking wether user put bet already
-let c = 0;
+let count_for_input = 0;
 //get data back when user try to input invalid amount
-let m = '000000';
-let n = 0;
+let backup_tokens_innerHTML = '000000';
+let backup_tokensAmount = 0;
 
 //***********------------ REFERENCES ------------************* */
 
@@ -70,7 +70,7 @@ const imageTags = document.querySelectorAll(".roller > img");
 let chef_audio = document.querySelector('#chef_audio');
 let place_bet_audio = document.querySelector('#place_bet');
 let cartman_audio = document.querySelector('#cartman_pay');
-let stan_audio = document.querySelector('#stan_sweet');
+let stan_audio = document.querySelector('#stan_stupid');
 let kyle_audio = document.querySelector('#kyle_fart');
 let satan_audio = document.querySelector('#satan');
 let win_audio = document.querySelector('#kenny');
@@ -92,12 +92,13 @@ chef_audio.addEventListener('mouseover', function () {
 initialize();
 
 function initialize() {
+    roller.addEventListener('click', spin);
     tokensAmount = 0;
-    tokens.innerText = '000000';
-    m = 0;
-    n = '000000';
-    c = 0;
-    betInput.placeholder = 'Maxinum bet is $10';
+    tokens.innerHTML = '000000';
+    backup_tokens_innerHTML = '000000';
+    backup_tokensAmount = 0;
+    count_for_input = 0;
+    betInput.placeholder = 'Maximum bet is $10';
     hightLightRemover();
     for (let index = 0; index < imageTags.length; index++) {
         imageTags[index].src = imagesObjArray[Math.floor(Math.random() * imagesObjArray.length)].image;
@@ -110,35 +111,35 @@ function placeBet() {
 
     if (!isNaN(betInput.value) && betInput.value.length > 0 && betInput.value <= 10) {
 
-        if (c < 1) {
+        if (count_for_input < 1) {
             place_bet_audio.play()
             tokensAmount += Math.floor(betInput.value) / 0.05;
             tokens.innerHTML = sixDigit(tokensAmount);
             betInput.placeholder = '$0.00';
-            n = tokensAmount;
-            m = tokens.innerHTML;
+            backup_tokensAmount = tokensAmount;
+            backup_tokens_innerHTML = tokens.innerHTML;
             inputInitializer();
-            c++;
+            count_for_input++;
         }
         else {
-            n = tokensAmount;
-            m = tokens.innerHTML;
+            backup_tokensAmount = tokensAmount;
+            backup_tokens_innerHTML = tokens.innerHTML;
             inputInitializer();
             betInput.placeholder = 'Kenny can place once only';
         }
     }
     else if (betInput.value > 10) {
 
-        if (c > 1) {
-            tokensAmount = n;
-            tokens.innerHTML = m;
+        if (count_for_input > 1) {
+            tokensAmount = backup_tokensAmount;
+            tokens.innerHTML = backup_tokens_innerHTML;
             inputInitializer();
             betInput.placeholder = 'Kenny can place once only';
         }
         else {
             inputInitializer();
             betInput.placeholder = "Kenny can't carry that much!";
-            c = 0;
+            count_for_input = 0;
         }
     }
 
@@ -146,12 +147,10 @@ function placeBet() {
         betInput.placeholder = "Don't be mean";
         inputInitializer();
     }
-
-
 }
 
 function spin() {
-    if (tokens.innerHTML > 0) {
+    if (tokensAmount > 9) {
         hightLightRemover();
         tokensAmount -= 10;
         tokens.innerHTML = sixDigit(tokensAmount);
@@ -163,11 +162,15 @@ function spin() {
         if (tokensAmount >= 1000) {
             initialize();
             betInput.placeholder = 'YOU WIN!';
-            tokens.innerHTML = "CONGRATULATION!";
+            tokens.innerHTML = "CONGRATS!";
+            roller.removeEventListener('click', spin);
         }
     }
 
-    else betInput.placeholder = "You are out of money";
+    else {
+        betInput.placeholder = "No tokens left, you lose!";
+        tokens.innerHTML = "LOSE";
+    }
 }
 
 function setImageToRoller(imgObj) {
@@ -231,16 +234,13 @@ function rule(arr) {
     }
 }
 
-
-
 function inputInitializer() {
     betInput.value = '';
     betInput.style = null;
 }
 
 function sixDigit(number) {
-    if (number <= 9999) { number = ("00000" + number).slice(-6); }
-    return number;
+    return ("00000" + number).slice(-6);
 }
 
 function hightLightRemover() {

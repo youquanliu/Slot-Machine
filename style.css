@@ -35,16 +35,13 @@ section {
 }
 
 #chef_audio {
-    content : '';
-    position: absolute;
-    top     : 0;
-    width   : 4%;
-    height  : 100vh;
-    margin  : 0 auto;
-<<<<<<< HEAD
-    z-index : -90;
-=======
->>>>>>> origin/master
+    content             : '';
+    position            : absolute;
+    top                 : 0;
+    width               : 4%;
+    height              : 100vh;
+    margin              : 0 auto;
+    z-index: -90;
 }
 
 .machine-body {
@@ -334,13 +331,14 @@ p {
     left : 93%;
 }
 
+
+
 .drop-items img {
     position : absolute;
     top      : 0;
     max-width: 100%;
     animation: animateItem calc(6s * var(--i)) linear infinite;
     z-index  : -1;
-
 }
 
 @keyframes animateItem {
