@@ -45,13 +45,9 @@ const hightlightArr = [w1, w2, w3, w4, l1, l2];
 
 //***********------------ VARIABLES ------------************* */
 
-//Amount of tokens
 let tokensAmount;
-//a objects of spinner results
 let spinResults = [];
-//tracking wether user put bet already
 let c = 0;
-//get data back when user try to input invalid amount
 let m = '000000';
 let n = 0;
 
@@ -139,7 +135,6 @@ function placeBet() {
             c = 0;
         }
     }
-
     else {
         betInput.placeholder = "Don't be mean";
         inputInitializer();

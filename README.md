@@ -25,7 +25,7 @@
 ## Next Step: Planned furture enhancements(icebox items)
 
 * Login Feature
-* Sore user's infomation in database
+* Store user's infomation in database
 * Leaderbord to show history
 * Add story backgroung about the game, and images & audios accordingly (optional)
 
