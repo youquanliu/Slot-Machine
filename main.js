@@ -176,7 +176,7 @@ function setImageToRoller(imgObj) {
     for (let index = 0; index < imageTags.length; index++) {
         setTimeout(() => {
             imageTags[index].src = imgObj[index]
-        }, t += 200);
+        }, t += 100);
     };
     rule(spinResults);
 }
